@@ -1,0 +1,61 @@
+<form class="splash-container" [formGroup]="inscriptionForm">
+    <div class="card">
+        <div class="card-header">
+            <h3 class="mb-1">Registrations Form</h3>
+            <p>Please enter your user information.</p>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <input class="form-control form-control-lg" [ngClass]="inscriptionForm.controls.prenom.touched?(inscriptionForm.controls.prenom.invalid?'input-invalid':'input-valid'):''" id="prenom" type="text" required="" placeholder="Firstname" autocomplete="off" formControlName="prenom">
+                <span *ngIf="inscriptionForm.controls.prenom.touched && inscriptionForm.controls.prenom.invalid" class="">Champ obligatoire*</span>
+            </div>
+            <div class="form-group">
+                <input class="form-control form-control-lg" [ngClass]="inscriptionForm.controls.nom.touched?(inscriptionForm.controls.nom.invalid?'input-invalid':'input-valid'):''" id="nom" type="text" required="" placeholder="Lastname" autocomplete="off" formControlName="nom">
+                <span *ngIf="inscriptionForm.controls.nom.touched && inscriptionForm.controls.nom.invalid" class="">Champ obligatoire*</span>
+            </div>
+            <div class="form-group">
+                <input class="form-control form-control-lg" [ngClass]="inscriptionForm.controls.email.touched?(inscriptionForm.controls.email.invalid?'input-invalid':'input-valid'):''" id="email" type="email" placeholder="Email" required=""  autocomplete="off" formControlName="email">
+                <span *ngIf="inscriptionForm.controls.email.touched && inscriptionForm.controls.email.invalid" class="">Champ obligatoire*</span>
+            </div>
+            <div class="form-group">
+                <input class="form-control form-control-lg" [ngClass]="inscriptionForm.controls.phone.touched?(inscriptionForm.controls.phone.invalid?'input-invalid':'input-valid'):''" id="phone"  type="number"  placeholder="Téléphone" required="" autocomplete="off" formControlName="phone" >
+                <span *ngIf="inscriptionForm.controls.phone.touched && inscriptionForm.controls.phone.invalid" class="">Champ obligatoire*</span>
+            </div>
+            <div class="form-group">
+                <input class="form-control form-control-lg" [ngClass]="inscriptionForm.controls.password.touched?(inscriptionForm.controls.password.invalid?'input-invalid':'input-valid'):''" id="password" type="password"  placeholder="Password" required="" autocomplete="off" formControlName="password">
+                <span *ngIf="inscriptionForm.controls.password.touched && inscriptionForm.controls.password.invalid" class="">Champ obligatoire*</span>
+            </div>
+            <!--je viens de remplacer-->
+        
+            <div class="form-group">
+                
+                    <label for="pet-select">Choose role:</label>
+
+                        <select class="form-control form-control-lg" id="pet-select" required name="rolename" autocomplete="off" formControlName="rolename">
+                    
+                            <option value="ROLE_ADMIN">ROLE_ADMIN</option>
+                            <option value="ROLE_USER">ROLE_USER</option>
+                            
+                        </select>
+                        <span *ngIf="inscriptionForm.controls.rolename.touched && inscriptionForm.controls.rolename.invalid" class="">Champ obligatoire*</span>
+
+            </div>
+           
+            
+            <div class="form-group pt-2">
+                <button class="btn btn-block btn-primary" type="submit" (click)="save()">Register My Account</button>
+            </div>
+
+            <div class="form-group">
+                <label class="custom-control custom-checkbox">
+                    <input class="custom-control-input" type="checkbox"><span class="custom-control-label">By creating an account, you agree the <a href="#">terms and conditions</a></span>
+                </label>
+            </div>
+            
+           
+        </div>
+        <div class="card-footer bg-white">
+            <p>Already member? <a href="#" class="text-secondary">Login Here.</a></p>
+        </div>
+    </div>
+    </form>

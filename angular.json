@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "tchoubotest"
+    }
+  },
+  "defaultProject": "tchoubotest",
+  "cli": {
+    "analytics": "0b37b448-adb0-4431-b0d9-87ba334cc1d4"
+  }
 }
